@@ -7,16 +7,32 @@ loadStorage();
 //call the function to display the library
 updateLibraryDisplay();
 
+class Book{
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    toggleRead() {
+        this.read = !this.read; 
+    }
+
+    remove() {
+        myLibrary.splice(this.index, 1);
+    }
+}
 //constructor
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}    
-//define two functions on the prototype of Book
-Book.prototype.toggleRead = function () { this.read = !this.read; }
-Book.prototype.remove = function() { myLibrary.splice(this.index, 1); }
+// function Book(title, author, pages, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+// }    
+// //define two functions on the prototype of Book
+// Book.prototype.toggleRead = function () { this.read = !this.read; }
+// Book.prototype.remove = function() { myLibrary.splice(this.index, 1); }
 
 //add book to myLibrary array feature
 function addBookToLibrary(book) {
